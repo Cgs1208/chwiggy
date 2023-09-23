@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import "./Body.css";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 //not using key <<<< index as key  <<< unique ID
 function Body() {
@@ -48,6 +49,13 @@ function Body() {
       setFilteredResList(filteredRestaurants);
     }
   };
+
+  const isOnline = useOnlineStatus();
+
+  if (isOnline === false)
+    return (
+      <h1>Looks like you are offline! Please check internet connection 🤷‍♂️</h1>
+    );
 
   //conditional rendering
   return resList.length === 0 ? (
