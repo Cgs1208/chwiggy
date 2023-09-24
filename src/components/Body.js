@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
-import "./Body.css";
+//import "./Body.css";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -62,14 +62,31 @@ function Body() {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <input type="text" value={searchText} onChange={searchHandler} />
-        <button onClick={filterResHandler}>Search</button>
-        <button className="filter-btn" onClick={filterHandler}>
-          Top rating restaurant
-        </button>
+      <div className="flex items-center">
+        <div className="m-4 p-4">
+          <input
+            className="border border-solid border-black"
+            type="text"
+            value={searchText}
+            onChange={searchHandler}
+          />
+          <button
+            className="px-4 m-4 rounded-lg bg-orange-200"
+            onClick={filterResHandler}
+          >
+            Search
+          </button>
+        </div>
+        <div>
+          <button
+            className="px-4 m-4 rounded-lg bg-orange-200"
+            onClick={filterHandler}
+          >
+            Top rating restaurant
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredResList.map((restaurant) => (
           <Link
             key={restaurant.info.id}

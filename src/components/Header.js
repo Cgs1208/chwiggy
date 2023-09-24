@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Header.css";
+//import "./Header.css";
 import { LOGO_URL } from "../utils/constans";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -14,44 +14,30 @@ function Header() {
   const onlineStatus = useOnlineStatus();
 
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" src={LOGO_URL} alt="Food App Logo" />
+    <div className="h-16 flex justify-between bg-red-200 shadow-lg items-center">
+      <div>
+        <img className="w-16 " src={LOGO_URL} alt="Food App Logo" />
       </div>
-      <div className="navitems">
-        <ul>
-          <li>Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
-          <li>
-            <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-              Home
-            </Link>
+      <div>
+        <ul className="flex p-3 m-3">
+          <li className="px-4">Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
+          <li className="px-4">
+            <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link
-              to="/about"
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              About
-            </Link>
+          <li className="px-4">
+            <Link to="/about">About</Link>
           </li>
-          <li>
-            <Link
-              to="/grocery"
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              Grocery
-            </Link>
+          <li className="px-4">
+            <Link to="/grocery">Grocery</Link>
           </li>
-          <li>
-            <Link
-              to="/contact"
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              Contact Us
-            </Link>
+          <li className="px-4">
+            <Link to="/contact">Contact Us</Link>
           </li>
-          <li>Cart</li>
-          <button className="login-btn" onClick={loginHandler}>
+          <li className="px-4">Cart</li>
+          <button
+            className="px-4 bg-orange-500  0 rounded w-20"
+            onClick={loginHandler}
+          >
             {authBtn}
           </button>
         </ul>

@@ -1,5 +1,5 @@
 import React from "react";
-import "./RestaurantCard.css";
+//import "./RestaurantCard.css";
 import { CDN_URL } from "../utils/constans";
 
 function RestaurantCard({ resList }) {
@@ -13,13 +13,13 @@ function RestaurantCard({ resList }) {
   } = resList?.info;
 
   return (
-    <div className="res-card">
+    <div className="rounded-lg p-2 m-1 w-64 bg-gray-200 hover:border border-solid border-black hover:bg-gray-300">
       <img
-        className="res-logo"
+        className="rounded"
         src={CDN_URL + cloudinaryImageId}
         alt="Food pic"
       />
-      <h3>{name}</h3>
+      <h3 className="py-2 text-lg font-bold">{name}</h3>
       <h5>{costForTwo}</h5>
       <h5>
         {cuisines.slice(0, 5).join(", ")} {/* Display the first two cuisines */}
