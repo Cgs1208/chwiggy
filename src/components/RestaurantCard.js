@@ -8,12 +8,12 @@ function RestaurantCard({ resList }) {
     costForTwo,
     cuisines,
     avgRating,
-    deliveryTime,
+    sla: { deliveryTime },
     cloudinaryImageId,
   } = resList?.info;
 
   return (
-    <div className="rounded-lg p-2 m-1 w-64 bg-gray-200 hover:border border-solid border-black hover:bg-gray-300">
+    <div className="rounded-lg p-2 m-1 w-64 bg-gray-200 hover:border border-solid border-black hover:bg-gray-300 hover:shadow-lg">
       <img
         className="rounded"
         src={CDN_URL + cloudinaryImageId}
@@ -33,3 +33,19 @@ function RestaurantCard({ resList }) {
 }
 
 export default RestaurantCard;
+
+//HOC component
+// input-> RestaurantCard => RestaurantCardVeg
+
+export const WithVegLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-green-400 text-white ml-2 mt-1 p-1 rounded-lg">
+          Veg
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};

@@ -2,8 +2,11 @@ import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 import { useParams } from "react-router-dom";
+import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 function RestaurantMenu() {
+  const [showIndex, setShowIndex] = useState(null);
   const { id } = useParams();
 
   const resInfo = useRestaurantMenu(id); //this is a custom hook to fetch restaurant menu details
@@ -17,19 +20,29 @@ function RestaurantMenu() {
     resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card;
 
+  //we are only taking the array elements which are having type as itemscategory
+  const itemCategory =
+    resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+
   return (
-    <div className="menu">
-      <h1>{name}</h1>
-      <p>
+    <div className="text-center">
+      <h1 className="my-8 p-2 font-bold text-2xl">{name}</h1>
+      <p className="font-bold text-lg mb-6">
         {cuisines.join(", ")} - {costForTwoMessage}
       </p>
-      <ul>
-        {itemCards.map((item) => (
-          <li key={item.card.info.id}>
-            {item.card.info.name} - {item.card.info.price / 100} Rs
-          </li>
-        ))}
-      </ul>
+      {/* categories accordian */}
+      {itemCategory.map((category, index) => (
+        <RestaurantCategory
+          key={category.card.card.title}
+          data={category.card.card}
+          showItems={index === showIndex ? true : false}
+          setShowIndex={() => setShowIndex(index)}
+        />
+      ))}
     </div>
   );
 }

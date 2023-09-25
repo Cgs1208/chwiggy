@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { WithVegLabel } from "./RestaurantCard";
 //import "./Body.css";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { RES_URl } from "../utils/constans";
 
 //not using key <<<< index as key  <<< unique ID
 function Body() {
   const [resList, setResList] = useState([]);
   const [filteredResList, setFilteredResList] = useState([]);
+
+  console.log(resList);
+
+  const RestaurantCardVeg = WithVegLabel(RestaurantCard);
 
   const [searchText, setSearchtext] = useState("");
 
@@ -24,9 +29,7 @@ function Body() {
   }, []);
 
   const fetchData = async () => {
-    const response = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const response = await fetch(RES_URl);
     const json = await response.json();
     const restaurants =
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
@@ -93,7 +96,12 @@ function Body() {
             to={`/restaurants/${restaurant.info.id}`}
             style={{ textDecoration: "none", color: "black" }}
           >
-            <RestaurantCard resList={restaurant} />
+            {/* if the res having aggregatedDiscountInfoV3 then show discount label */}
+            {restaurant.info.veg ? (
+              <RestaurantCardVeg resList={restaurant} />
+            ) : (
+              <RestaurantCard resList={restaurant} />
+            )}
           </Link>
         ))}
       </div>
