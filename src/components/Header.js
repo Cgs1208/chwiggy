@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 //import "./Header.css";
 import { LOGO_URL } from "../utils/constans";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 function Header() {
   const [authBtn, setAuthBtn] = useState("Login");
+
+  const { loggedInUser } = useContext(UserContext);
 
   const loginHandler = () => {
     authBtn === "Login" ? setAuthBtn("Logout") : setAuthBtn("Login");
@@ -40,6 +43,7 @@ function Header() {
           >
             {authBtn}
           </button>
+          <li className="px-4 font-bold">{loggedInUser}</li>
         </ul>
       </div>
     </div>

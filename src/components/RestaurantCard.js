@@ -13,9 +13,9 @@ function RestaurantCard({ resList }) {
   } = resList?.info;
 
   return (
-    <div className="rounded-lg p-2 m-1 w-64 bg-gray-200 hover:border border-solid border-black hover:bg-gray-300 hover:shadow-lg">
+    <div class="rounded-xl p-2 m-2   w-64 h-[465px] bg-[#f0f0f0] border border-solid border-black hover:bg-gray-200 hover:shadow-xl transform hover:scale-95 transition-all duration-200 ease-in-out">
       <img
-        className="rounded"
+        className="rounded-lg"
         src={CDN_URL + cloudinaryImageId}
         alt="Food pic"
       />
@@ -40,8 +40,8 @@ export default RestaurantCard;
 export const WithVegLabel = (RestaurantCard) => {
   return (props) => {
     return (
-      <div>
-        <label className="absolute bg-green-400 text-white ml-2 mt-1 p-1 rounded-lg">
+      <div className="relative">
+        <label className="bg-green-400 text-white absolute m-2 ml-3 p-1 rounded-lg z-10">
           Veg
         </label>
         <RestaurantCard {...props} />
