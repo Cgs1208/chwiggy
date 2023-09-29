@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import UserContext from "../utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "../utils/appStore";
 
 function RootLayout() {
   const [userName, setUserName] = useState();
@@ -13,10 +15,12 @@ function RootLayout() {
   }, []);
 
   return (
-    <UserContext.Provider value={{ loggedInUser: userName }}>
-      <Header />
-      <Outlet />
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName }}>
+        <Header />
+        <Outlet />
+      </UserContext.Provider>
+    </Provider>
   );
 }
 

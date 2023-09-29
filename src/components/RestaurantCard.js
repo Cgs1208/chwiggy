@@ -13,7 +13,7 @@ function RestaurantCard({ resList }) {
   } = resList?.info;
 
   return (
-    <div class="rounded-xl p-2 m-2   w-64 h-[465px] bg-[#f0f0f0] border border-solid border-black hover:bg-gray-200 hover:shadow-xl transform hover:scale-95 transition-all duration-200 ease-in-out">
+    <div className="rounded-xl p-2 m-2   w-64 h-[465px] bg-[#f0f0f0] border border-solid border-black hover:bg-gray-200 hover:shadow-xl transform hover:scale-95 transition-all duration-200 ease-in-out">
       <img
         className="rounded-lg"
         src={CDN_URL + cloudinaryImageId}

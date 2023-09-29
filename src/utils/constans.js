@@ -9,3 +9,6 @@ export const MENU_URL =
 
 export const RES_URl =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
+export const GIF_URL =
+  "https://i.giphy.com/media/f7vNjBejgdgMb6DlH9/giphy.webp";

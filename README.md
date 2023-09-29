@@ -14,3 +14,12 @@
 - - Links
 - - Adress
 - - Contact
+
+# Redux TookKit
+
+- Intall @redux/tookit and react-redux
+- build our store
+- connect the store to our app
+- slice (cartSlice)
+- dispatch actions
+- use useSelector to read store data

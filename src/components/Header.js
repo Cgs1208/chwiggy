@@ -4,6 +4,7 @@ import { LOGO_URL } from "../utils/constans";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 function Header() {
   const [authBtn, setAuthBtn] = useState("Login");
@@ -15,6 +16,9 @@ function Header() {
   };
 
   const onlineStatus = useOnlineStatus();
+
+  //we are subscribing to store using useSelector hook
+  const cartItems = useSelector((store) => store.cart.items);
 
   return (
     <div className="h-16 flex justify-between bg-red-200 shadow-lg items-center">
@@ -36,9 +40,13 @@ function Header() {
           <li className="px-4">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li className="px-4">Cart</li>
+          <li className="px-4">
+            <Link to="/cart">
+              Cart{cartItems.length ? `-(${cartItems.length} items)` : ""}
+            </Link>
+          </li>
           <button
-            className="px-4 bg-orange-500  0 rounded w-20"
+            className="px-5 bg-orange-500 rounded w-20"
             onClick={loginHandler}
           >
             {authBtn}

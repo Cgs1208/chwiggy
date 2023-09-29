@@ -89,7 +89,7 @@ function Body() {
           </button>
         </div>
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap grow">
         {filteredResList.map((restaurant) => (
           <Link
             key={restaurant.info.id}
