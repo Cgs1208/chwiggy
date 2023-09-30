@@ -23,3 +23,9 @@
 - slice (cartSlice)
 - dispatch actions
 - use useSelector to read store data
+
+# Types of Testing (developer)
+
+- Unit testing (testing components in isolation)
+- Integration testig (testing more than one components in integration)
+- End to End testing (e2e) (testing the whole app) - we use tools like selenium

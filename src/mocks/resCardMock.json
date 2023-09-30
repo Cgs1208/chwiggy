@@ -1,0 +1,131 @@
+{
+  "info": {
+    "id": "448116",
+    "name": "The Bowl Company",
+    "cloudinaryImageId": "bb6049fae59b8a2413a9177eb0338b49",
+    "locality": "Akkithimanahalli",
+    "areaName": "Shanti Nagar",
+    "costForTwo": "₹300 for two",
+    "cuisines": [
+      "Pan-Asian",
+      "Continental",
+      "North Indian",
+      "Desserts",
+      "American",
+      "Asian",
+      "Beverages",
+      "Biryani",
+      "Chinese",
+      "European",
+      "Grill",
+      "Hyderabadi",
+      "Indian",
+      "Italian",
+      "Kebabs",
+      "Lucknowi",
+      "Mediterranean",
+      "Mexican",
+      "Mughlai",
+      "Oriental",
+      "Pastas",
+      "Punjabi",
+      "Raja"
+    ],
+    "avgRating": 4.4,
+    "feeDetails": {
+      "restaurantId": "448116",
+      "fees": [
+        {
+          "name": "BASE_DISTANCE",
+          "fee": 3800
+        },
+        {
+          "name": "BASE_TIME"
+        },
+        {
+          "name": "ANCILLARY_SURGE_FEE"
+        }
+      ],
+      "totalFee": 3800
+    },
+    "parentId": "4317",
+    "avgRatingString": "4.4",
+    "totalRatingsString": "5K+",
+    "sla": {
+      "deliveryTime": 25,
+      "lastMileTravel": 2.7,
+      "serviceability": "SERVICEABLE",
+      "slaString": "25 mins",
+      "lastMileTravelString": "2.7 km",
+      "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+      "nextCloseTime": "2023-10-01 00:00:00",
+      "opened": true
+    },
+    "badges": {
+      "imageBadges": [
+        {
+          "imageId": "v1690360529/Ratnesh_Badges/Only_on_swiggy_badge_4x.png",
+          "description": "OnlyOnSwiggy"
+        }
+      ],
+      "textExtendedBadges": [
+        {
+          "iconId": "guiltfree/GF_Logo_android_3x",
+          "shortDescription": "options available",
+          "fontColor": "#7E808C"
+        }
+      ]
+    },
+    "isOpen": true,
+    "type": "F",
+    "badgesV2": {
+      "entityBadges": {
+        "imageBased": {
+          "badgeObject": [
+            {
+              "attributes": {
+                "description": "OnlyOnSwiggy",
+                "imageId": "v1690360529/Ratnesh_Badges/Only_on_swiggy_badge_4x.png"
+              }
+            }
+          ]
+        },
+        "textBased": {},
+        "textExtendedBadges": {
+          "badgeObject": [
+            {
+              "attributes": {
+                "description": "",
+                "fontColor": "#7E808C",
+                "iconId": "guiltfree/GF_Logo_android_3x",
+                "shortDescription": "options available"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "aggregatedDiscountInfoV3": {
+      "header": "EVERY ITEM",
+      "subHeader": "@ ₹139"
+    },
+    "differentiatedUi": {
+      "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      "differentiatedUiMediaDetails": {
+        "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+        "lottie": {},
+        "video": {}
+      }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {}
+  },
+  "analytics": {},
+  "cta": {
+    "link": "https://www.swiggy.com/restaurants/the-bowl-company-akkithimanahalli-shanti-nagar-bangalore-448116",
+    "type": "WEBLINK"
+  }
+}

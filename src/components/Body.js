@@ -11,8 +11,6 @@ function Body() {
   const [resList, setResList] = useState([]);
   const [filteredResList, setFilteredResList] = useState([]);
 
-  console.log(resList);
-
   const RestaurantCardVeg = WithVegLabel(RestaurantCard);
 
   const [searchText, setSearchtext] = useState("");
@@ -41,7 +39,6 @@ function Body() {
   const searchHandler = (e) => {
     const value = e.target.value;
     setSearchtext(value);
-    console.log(value);
   };
 
   const filterResHandler = () => {
