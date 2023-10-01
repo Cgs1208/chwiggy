@@ -1,5 +1,5 @@
 import React from "react";
-//import UserClass from "./UserClass";
+import UserClass from "./UserClass";
 
 class About extends React.Component {
   render() {
@@ -7,7 +7,7 @@ class About extends React.Component {
       <div>
         <h2>About</h2>
         {/* User.js is functional component of below class component */}
-        {/* <UserClass name="Charan Gs" location="Bangalore" /> */}
+        <UserClass name="Charan Gs" location="Bangalore" />
       </div>
     );
   }

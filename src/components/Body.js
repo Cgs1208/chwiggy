@@ -66,6 +66,7 @@ function Body() {
         <div className="m-4 p-4">
           <input
             className="border border-solid border-black"
+            data-testid="searchInput"
             type="text"
             value={searchText}
             onChange={searchHandler}
@@ -82,7 +83,7 @@ function Body() {
             className="px-4 m-4 rounded-lg bg-orange-200"
             onClick={filterHandler}
           >
-            Top rating restaurant
+            Top Rated Restaurants
           </button>
         </div>
       </div>
