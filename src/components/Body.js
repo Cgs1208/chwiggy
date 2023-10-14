@@ -87,7 +87,7 @@ function Body() {
             className="px-4 py-1 m-4 rounded bg-orange-200 hover:bg-orange-300"
             onClick={handleTopRatedRestaurants}
           >
-            Top Rated Restaurants
+            Rated 4.0 +
           </button>
         </div>
       </div>
