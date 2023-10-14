@@ -15,7 +15,7 @@ function RestaurantCard({ resList }) {
   return (
     <div
       data-testid="resCard"
-      className="rounded-xl p-2 m-2   w-64 h-96 bg-[#f0f0f0] hover:bg-gray-200 hover:shadow-xl transform hover:scale-95 transition-all duration-200 ease-in-out"
+      className="rounded-xl p-2 m-2   w-64 h-96 bg-[#f0f0f0] hover:bg-gray-200 hover:shadow-xl transform hover:scale-95 transition-all duration-200 ease-in-out hover:border border-gray-400"
     >
       <img
         className="rounded-lg w-full h-52"
