@@ -1,5 +1,4 @@
 import React from "react";
-import "./User.css";
 
 class UserClass extends React.Component {
   constructor(props) {
@@ -38,11 +37,15 @@ class UserClass extends React.Component {
     const { name, location, avatar_url } = this.state.userInfo;
     console.log("render");
     return (
-      <div className="user-card">
-        <img src={avatar_url} alt="" className="rounded-lg" />
-        <h2>Name: {name}</h2>
-        <h3>Location: {location}</h3>
-        <h4>Contact: charangs157@gmail.com</h4>
+      <div className="border border-black w-1/4 p-4 bg-white rounded-lg shadow-xl">
+        <img
+          src={avatar_url}
+          alt="github-avatar"
+          className="rounded-full w-32 h-32 mx-auto mb-4"
+        />
+        <h2 className="font-bold">Name: {name}</h2>
+        <h3 className="font-bold">Location: {location}</h3>
+        <h4 className="font-bold">Contact: charangs157@gmail.com</h4>
       </div>
     );
   }

@@ -15,17 +15,19 @@ function RestaurantCard({ resList }) {
   return (
     <div
       data-testid="resCard"
-      className="rounded-xl p-2 m-2   w-64 h-[465px] bg-[#f0f0f0] border border-solid border-black hover:bg-gray-200 hover:shadow-xl transform hover:scale-95 transition-all duration-200 ease-in-out"
+      className="rounded-xl p-2 m-2   w-64 h-96 bg-[#f0f0f0] hover:bg-gray-200 hover:shadow-xl transform hover:scale-95 transition-all duration-200 ease-in-out"
     >
       <img
-        className="rounded-lg"
+        className="rounded-lg w-full h-52"
         src={CDN_URL + cloudinaryImageId}
         alt="Food pic"
       />
-      <h3 className="py-2 text-lg font-bold">{name}</h3>
+      <h3 className="py-2 text-lg font-bold">
+        {name.length <= 20 ? name : `${name.slice(0, 20)}...`}
+      </h3>
       <h5>{costForTwo}</h5>
       <h5>
-        {cuisines.slice(0, 5).join(", ")} {/* Display the first two cuisines */}
+        {cuisines.slice(0, 4).join(", ")} {/* Display the first 4 cuisines */}
         {cuisines.length > 2 && " ..."}{" "}
         {/* Display ellipsis if there are more cuisines */}
       </h5>

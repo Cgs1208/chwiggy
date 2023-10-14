@@ -1,9 +1,9 @@
-import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 import { useParams } from "react-router-dom";
 import RestaurantCategory from "./RestaurantCategory";
 import { useState } from "react";
+import ShimmerResMenu from "./ShimmerResMenu";
 
 function RestaurantMenu() {
   const [showIndex, setShowIndex] = useState(null);
@@ -11,7 +11,7 @@ function RestaurantMenu() {
 
   const resInfo = useRestaurantMenu(id); //this is a custom hook to fetch restaurant menu details
 
-  if (resInfo === null) return <Shimmer />;
+  if (resInfo === null) return <ShimmerResMenu />;
 
   const { name, cuisines, costForTwoMessage } =
     resInfo?.data?.cards[0]?.card.card?.info;

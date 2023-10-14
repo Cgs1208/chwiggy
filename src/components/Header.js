@@ -46,7 +46,7 @@ function Header() {
             </Link>
           </li>
           <button
-            className="px-5 bg-orange-500 rounded w-20"
+            className="px-3 py-1 bg-orange-400 rounded w-20"
             onClick={loginHandler}
           >
             {authBtn}
